@@ -17,7 +17,7 @@ function setToRandom(scale) {
 function makePac() {
   // returns an object with values scaled {x: 33, y: 21}
   let velocity = setToRandom(10);
-  let position = setToRandom(200);
+  let position = setToRandom(10);
   // Add image to div id = game
   let game = document.getElementById("game");
   let newimg = document.createElement("img");
@@ -66,14 +66,14 @@ function update() {
 
 function checkCollisions(item) {
   if (
-    item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
-    item.position.x + item.velocity.x < 0
+    item.position.x + item.velocity.x + item.newimg.width > 500 ||
+    item.position.x + item.velocity.x < 200
   )
     item.velocity.x = -item.velocity.x;
   if (
     item.position.y + item.velocity.y + item.newimg.height >
-      window.innerHeight ||
-    item.position.y + item.velocity.y < 0
+      500 ||
+    item.position.y + item.velocity.y < 200
   )
     item.velocity.y = -item.velocity.y;
 }
